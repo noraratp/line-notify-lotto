@@ -41,7 +41,7 @@ request.onreadystatechange = function() {
     }
     else
     {
-
+      window.location= "index.php?round="+"- ไม่เจอรอบ -";
     }
 };
 </script>
