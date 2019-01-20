@@ -1,5 +1,5 @@
 <html>
-<div class="wrapper"></div>
+<div class="wrapper" style="display:none"></div>
 </html>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
 <script>
@@ -21,18 +21,27 @@ request.onreadystatechange = function() {
     console.log(request.responseText);
     $(".wrapper").html(request.responseText);
     //$("#references").append(html);  
-    var round = "จับยี่กี รอบที่ 37"
-    var three = $("th:contains("+round+")").next()[0].innerHTML;
-    var two = $("th:contains("+round+")").next().next()[0].innerHTML;
-    var array = [];
-    array.push(round);
-    array.push(three.trim());
-    array.push(two.trim());
-    var message = array;
-    //console.log(message)
-    if(three.trim().length == 3)
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('round');
+    if(myParam != undefined)
     {
-    window.location= "send.php?message="+message;
+      var round = "จับยี่กี รอบที่ "+myParam;
+      var three = $("th:contains("+round+")").next()[0].innerHTML;
+      var two = $("th:contains("+round+")").next().next()[0].innerHTML;
+      var array = [];
+      array.push(round);
+      array.push(three.trim());
+      array.push(two.trim());
+      var message = array;
+      //console.log(message)
+      if(three.trim().length == 3)
+      {
+      window.location= "send.php?message="+message;
+      }
+    }
+    else
+    {
+
     }
 };
 </script>

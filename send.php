@@ -4,6 +4,7 @@ $newMessage = explode(",", $message);
 $sendMessage = $newMessage[0] . "\r\n";
 $sendMessage .= "สามตัว : " . $newMessage[1] . "\r\n";
 $sendMessage .= "สองตัว : " . $newMessage[2];
+
 $chOne = curl_init();
 curl_setopt( $chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
 // SSL USE
@@ -26,7 +27,9 @@ $result = curl_exec( $chOne );
 //Check error
 if(curl_error($chOne)) { echo 'error:' . curl_error($chOne); }
 else { $result_ = json_decode($result, true);
-echo "status : ".$result_['status']; echo "message : ". $result_['message']; }
+echo "status : ".$result_['status']; echo " message : ". $result_['message']; }
 //Close connect
 curl_close( $chOne );
+header("Location: index.php?round=".$newMessage[0]."&res=".$result_['message']);
+die();
 ?>
