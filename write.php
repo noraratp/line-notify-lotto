@@ -46,7 +46,7 @@ setTimeout(() => {
 
     //console.log(message)
     if (three.trim().length == 3) {
-        console.log(JSON.stringify(postForm));
+        //console.log(JSON.stringify(postForm));
         //window.location= "send.php?message="+message;
         $.ajax({ //Process the form using $.ajax()
             type: 'POST', //Method type
