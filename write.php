@@ -39,8 +39,8 @@ setTimeout(() => {
             array.push(three.trim());
             array.push(two.trim());
             var message = array;
-            var postForm = { //Fetch form data
-            'value' : message //Store name fields value
+                // var postForm = { //Fetch form data
+                // 'value' : message //Store name fields value
         };
 
             //console.log(message)
@@ -49,8 +49,9 @@ setTimeout(() => {
                 //window.location= "send.php?message="+message;
                 $.ajax({ //Process the form using $.ajax()
                     type: 'POST', //Method type
+                    contentType: "application/json; charset=utf-8",
                     url: '/line.php', //Your form processing file URL
-                    data: JSON.stringify(postForm),
+                    data: {"value" : message}//JSON.stringify(postForm),
                     dataType: 'json',
                     success: function(data) {
                         console.log(data)

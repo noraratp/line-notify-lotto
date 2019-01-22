@@ -1,5 +1,5 @@
 <?
-$message = ($_POST['value'][0]);
+$message = ($_POST['value']);
 // $newMessage = explode(",", $message);
 // $sendMessage = $newMessage[0] . "\r\n";
 // $sendMessage .= "สามตัว : " . $newMessage[1] . "\r\n";
