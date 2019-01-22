@@ -39,23 +39,16 @@ request.onreadystatechange = function() {
         var message = array;
         //console.log(message)
         if (three.trim().length == 3) {
+            console.log("x");
             //window.location= "send.php?message="+message;
-            $.ajax({
-                url: "line.php",
-                type: "post",
-                data: {
-                    value: message
-                },
-                success: function(response) {
-                    // you will get response from your php page (what you echo or print)                 
-
-                },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(textStatus, errorThrown);
-                }
-
-
-            });
+            $.ajax({ //Process the form using $.ajax()
+            type      : 'POST', //Method type
+            url       : 'line.php', //Your form processing file URL
+            data      : {value : message}, //Forms name
+            dataType  : 'json',
+            success   : function(data) {
+                           
+        });
         }
     } else {
         window.location = "index.php?round=" + "- ไม่เจอรอบ -";
