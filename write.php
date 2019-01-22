@@ -50,7 +50,7 @@ setTimeout(() => {
                 $.ajax({ //Process the form using $.ajax()
                     type: 'POST', //Method type
                     url: '/line.php', //Your form processing file URL
-                    data: JSON.stringify(postForm),
+                    data: (postForm),
                     dataType: 'json',
                     success: function(data) {
                         console.log(data)
