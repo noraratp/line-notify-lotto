@@ -51,7 +51,9 @@ setTimeout(() => {
                     url: 'line.php', //Your form processing file URL
                     data: JSON.stringify(postForm),
                     dataType: 'json',
-                    success: function(data) {}
+                    success: function(data) {
+                        console.log(data)
+                    }
                 });
                 
             }
