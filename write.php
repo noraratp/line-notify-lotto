@@ -51,7 +51,7 @@ setTimeout(() => {
                     type: 'POST', //Method type
                     contentType: "application/json; charset=utf-8",
                     url: '/line.php', //Your form processing file URL
-                    data: {"value" : message}//JSON.stringify(postForm),
+                    data: {"value" : message},//JSON.stringify(postForm),
                     dataType: 'json',
                     success: function(data) {
                         console.log(data)
