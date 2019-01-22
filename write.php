@@ -29,31 +29,32 @@ request.onreadystatechange = function() {
         const urlParams = new URLSearchParams(window.location.search);
         const myParam = urlParams.get('round');
         if (myParam != undefined) {
-        var round = "จับยี่กี รอบที่ " + myParam;
-        var three = $("th:contains(" + round + ")").next()[0].innerHTML;
-        var two = $("th:contains(" + round + ")").next().next()[0].innerHTML;
-        var array = [];
-        array.push(round);
-        array.push(three.trim());
-        array.push(two.trim());
-        var message = array;
-        //console.log(message)
-        if (three.trim().length == 3) {
-            console.log("x");
-            //window.location= "send.php?message="+message;
-            $.ajax({ //Process the form using $.ajax()
-            type      : 'POST', //Method type
-            url       : 'line.php', //Your form processing file URL
-            data      : {value : message}, //Forms name
-            dataType  : 'json',
-            success   : function(data) {
-                           
-        });
+            var round = "จับยี่กี รอบที่ " + myParam;
+            var three = $("th:contains(" + round + ")").next()[0].innerHTML;
+            var two = $("th:contains(" + round + ")").next().next()[0].innerHTML;
+            var array = [];
+            array.push(round);
+            array.push(three.trim());
+            array.push(two.trim());
+            var message = array;
+            //console.log(message)
+            if (three.trim().length == 3) {
+                console.log("x");
+                //window.location= "send.php?message="+message;
+                $.ajax({ //Process the form using $.ajax()
+                    type: 'POST', //Method type
+                    url: 'line.php', //Your form processing file URL
+                    data: {
+                        value: message
+                    }, //Forms name
+                    dataType: 'json',
+                    success: function(data) {}
+                });
+            }
+        } else {
+            window.location = "index.php?round=" + "- ไม่เจอรอบ -";
         }
-    } else {
-        window.location = "index.php?round=" + "- ไม่เจอรอบ -";
-    }
     }, 5000);
-    
+
 };
 </script>
