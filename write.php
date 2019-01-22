@@ -43,7 +43,7 @@ request.onreadystatechange = function() {
 
             //console.log(message)
             if (three.trim().length == 3) {
-                console.log("x");
+                console.log(postForm);
                 //window.location= "send.php?message="+message;
                 $.ajax({ //Process the form using $.ajax()
                     type: 'POST', //Method type
