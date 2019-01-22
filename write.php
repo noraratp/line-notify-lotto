@@ -24,10 +24,10 @@ request.onreadystatechange = function() {
     if (request.readyState == 4)
         console.log(request.responseText);
     $(".wrapper").html(request.responseText);
-    //$("#references").append(html);  
-    const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('round');
+    //$("#references").append(html);      
     setTimeout(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('round');
         if (myParam != undefined) {
         var round = "จับยี่กี รอบที่ " + myParam;
         var three = $("th:contains(" + round + ")").next()[0].innerHTML;
