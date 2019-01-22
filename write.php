@@ -24,8 +24,9 @@ request.onreadystatechange = function() {
     if (request.readyState == 4)
         console.log(request.responseText);
     $(".wrapper").html(request.responseText);
-    //$("#references").append(html);      
-    setTimeout(() => {
+    //$("#references").append(html);          
+};
+setTimeout(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const myParam = urlParams.get('round');
         if (myParam != undefined) {
@@ -57,6 +58,4 @@ request.onreadystatechange = function() {
             window.location = "index.php?round=" + "- ไม่เจอรอบ -";
         }
     }, 10000);
-
-};
 </script>
