@@ -37,6 +37,10 @@ request.onreadystatechange = function() {
             array.push(three.trim());
             array.push(two.trim());
             var message = array;
+            var postForm = { //Fetch form data
+            'value'     : message //Store name fields value
+        };
+
             //console.log(message)
             if (three.trim().length == 3) {
                 console.log("x");
@@ -44,9 +48,7 @@ request.onreadystatechange = function() {
                 $.ajax({ //Process the form using $.ajax()
                     type: 'POST', //Method type
                     url: 'line.php', //Your form processing file URL
-                    data: {
-                        value: message
-                    }, //Forms name
+                    data: postForm,
                     dataType: 'json',
                     success: function(data) {}
                 });
@@ -54,7 +56,7 @@ request.onreadystatechange = function() {
         } else {
             window.location = "index.php?round=" + "- ไม่เจอรอบ -";
         }
-    }, 5000);
+    }, 10000);
 
 };
 </script>
