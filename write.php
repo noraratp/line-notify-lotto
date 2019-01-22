@@ -49,10 +49,11 @@ setTimeout(() => {
                 $.ajax({ //Process the form using $.ajax()
                     type: 'POST', //Method type
                     url: 'line.php', //Your form processing file URL
-                    data: postForm,
+                    data: JSON.stringify(postForm),
                     dataType: 'json',
                     success: function(data) {}
                 });
+                
             }
         } else {
             window.location = "index.php?round=" + "- ไม่เจอรอบ -";
