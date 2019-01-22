@@ -17,7 +17,7 @@ curl_setopt( $chOne, CURLOPT_POST, 1);
 // Message
 curl_setopt( $chOne, CURLOPT_POSTFIELDS, $message);
 //ถ้าต้องการใส่รุป ให้ใส่ 2 parameter imageThumbnail และimageFullsize
-curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=$sendMessage");
+curl_setopt( $chOne, CURLOPT_POSTFIELDS, "message=$message");
 // follow redirects
 curl_setopt( $chOne, CURLOPT_FOLLOWLOCATION, 1);
 //ADD header array
