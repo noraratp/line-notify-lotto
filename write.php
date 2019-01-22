@@ -40,7 +40,7 @@ setTimeout(() => {
             array.push(two.trim());
             var message = array;
             var postForm = { //Fetch form data
-            'value'     : message //Store name fields value
+            'value' : message //Store name fields value
         };
 
             //console.log(message)
