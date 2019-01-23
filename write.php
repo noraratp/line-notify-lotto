@@ -61,7 +61,7 @@ $(document).ready(function() {
             $.ajax({ //Process the form using $.ajax()
                 type: 'POST', //Method type
                 contentType: "application/json; charset=utf-8",
-                url: '/line.php', //Your form processing file URL
+                url: 'line.php', //Your form processing file URL
                 cache: false,
                 data: {
                     data: message
