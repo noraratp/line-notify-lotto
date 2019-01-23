@@ -2,9 +2,9 @@
 
 $message = $_POST['data'];
 //$newMessage = explode(",", $message);
-$sendMessage = $message[0].value . "\r\n";
-$sendMessage .= "สามตัว : " . $message[1].value . "\r\n";
-$sendMessage .= "สองตัว : " . $message[2].value;
+$sendMessage = $message[0] . "\r\n";
+$sendMessage .= "สามตัว : " . $message[1] . "\r\n";
+$sendMessage .= "สองตัว : " . $message[2];
 
 echo $sendMessage;
 
