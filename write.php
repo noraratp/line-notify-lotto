@@ -47,14 +47,14 @@ $(document).ready(function() {
 
         //console.log(message)
         if (three.trim().length == 3) {
-            //console.log(JSON.stringify(postForm));
+            console.log(JSON.stringify(message));
             //window.location= "send.php?message="+message;
             $.ajax({ //Process the form using $.ajax()
                 type: 'POST', //Method type
                 contentType: "application/json; charset=utf-8",
                 url: '/line.php', //Your form processing file URL
                 data: {
-                    value: JSON.stringify(message)
+                    'value': JSON.stringify(message)
                 }, //JSON.stringify(postForm),
                 dataType: 'json',
                 success: function(data) {
