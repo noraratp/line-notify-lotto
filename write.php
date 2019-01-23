@@ -1,6 +1,6 @@
 <html>
 <form>
-    <div class="wrapper" style="display:none"></div>
+    <div class="wrapper"></div>
 </form>
 
 </html>
