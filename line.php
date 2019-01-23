@@ -1,6 +1,6 @@
 <?
 
-$message = json_decode(stripslashes($_POST['data']));
+$message = $_POST['data'];
 //$newMessage = explode(",", $message);
 $sendMessage = $message[0].value . "\r\n";
 $sendMessage .= "สามตัว : " . $message[1].value . "\r\n";

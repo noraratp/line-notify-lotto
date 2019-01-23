@@ -53,10 +53,10 @@ $(document).ready(function() {
             // var postForm = { //Fetch form data
             // 'value' : message //Store name fields value
         };
-        var jsonString = JSON.stringify(message);
+        //var jsonString = JSON.stringify(message);
         //console.log(message)
         if (three.trim().length == 3) {
-            console.log(JSON.stringify(message));
+            //console.log(JSON.stringify(message));
             //window.location= "send.php?message="+message;
             $.ajax({ //Process the form using $.ajax()
                 type: 'POST', //Method type
@@ -64,7 +64,7 @@ $(document).ready(function() {
                 url: '/line.php', //Your form processing file URL
                 cache: false,
                 data: {
-                    data: jsonString
+                    data: message
                 }, //JSON.stringify(postForm),
                 dataType: 'json',
                 success: function(data) {
