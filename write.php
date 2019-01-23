@@ -37,14 +37,23 @@ $(document).ready(function() {
             var three = $("th:contains(" + round + ")").next()[0].innerHTML;
             var two = $("th:contains(" + round + ")").next().next()[0].innerHTML;
             var array = [];
-            array.push(round);
-            array.push(three.trim());
-            array.push(two.trim());
+            array.push({
+                id: 1,
+                value: round
+            });
+            array.push({
+                id: 2,
+                value: three.trim()
+            });
+            array.push({
+                id: 3,
+                value: two.trim()
+            });
             var message = array;
             // var postForm = { //Fetch form data
             // 'value' : message //Store name fields value
         };
-
+        var jsonString = JSON.stringify(message);
         //console.log(message)
         if (three.trim().length == 3) {
             console.log(JSON.stringify(message));
@@ -53,16 +62,15 @@ $(document).ready(function() {
                 type: 'POST', //Method type
                 contentType: "application/json; charset=utf-8",
                 url: '/line.php', //Your form processing file URL
+                cache: false,
                 data: {
-                    'value': JSON.stringify(message)
+                    data: jsonString
                 }, //JSON.stringify(postForm),
                 dataType: 'json',
                 success: function(data) {
                     console.log(data)
                 }
             });
-        } else {
-            window.location = "index.php?round=" + "- ไม่เจอรอบ -";
         }
     }, 10000);
 });

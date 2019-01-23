@@ -1,10 +1,10 @@
 <?
 
-$message = json_decode(stripslashes($_POST['value']));
+$message = json_decode(stripslashes($_POST['data']));
 //$newMessage = explode(",", $message);
-$sendMessage = $message[0] . "\r\n";
-$sendMessage .= "สามตัว : " . $message[1] . "\r\n";
-$sendMessage .= "สองตัว : " . $message[2];
+$sendMessage = $message[0].value . "\r\n";
+$sendMessage .= "สามตัว : " . $message[1].value . "\r\n";
+$sendMessage .= "สองตัว : " . $message[2].value;
 
 echo $sendMessage;
 
